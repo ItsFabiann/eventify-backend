@@ -1,0 +1,99 @@
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\raifa\OneDrive\Escritorio\Eventify Codigo Fuente\EventifyAPI
+dbug: Microsoft.EntityFrameworkCore.Infrastructure[10401]
+      An 'IServiceProvider' was created for internal use by Entity Framework.
+warn: Microsoft.EntityFrameworkCore.Model.Validation[10625]
+      The foreign key property 'Pago.BoletoId1' was created in shadow state because a conflicting property with the simple name 'BoletoId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No store type was specified for the decimal property 'Comision' on entity type 'Pago'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+dbug: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 8.0.0 initialized 'EventifyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.0' with options: None
+dbug: Microsoft.EntityFrameworkCore.Query[10111]
+      Compiling query expression: 
+      'DbSet<Usuario>()
+          .FirstOrDefault(u => u.Email == __email_0)'
+dbug: Microsoft.EntityFrameworkCore.Query[10107]
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Usuario>(
+          asyncEnumerable: new SingleQueryingEnumerable<Usuario>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Usuario.UsuarioId (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Usuario.Activo (bool) Required Sentinel:True ValueGenerated.OnAdd, 1], [Property: Usuario.Dni (string) MaxLength(20), 2], [Property: Usuario.Email (string) Required Index MaxLength(100), 3], [Property: Usuario.FechaCreacion (DateTime) Required ValueGenerated.OnAdd, 4], [Property: Usuario.NombreCompleto (string) Required MaxLength(100), 5], [Property: Usuario.PasswordHash (string) Required MaxLength(255), 6], [Property: Usuario.Rol (string) Required MaxLength(20), 7], [Property: Usuario.Telefono (string) MaxLength(20), 8] }
+                  SELECT TOP(1) u.UsuarioId, u.Activo, u.Dni, u.Email, u.FechaCreacion, u.NombreCompleto, u.PasswordHash, u.Rol, u.Telefono
+                  FROM Usuarios AS u
+                  WHERE u.Email == @__email_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Usuario>, 
+              EventifyAPI.Infrastructure.Data.EventifyDbContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20005]
+      Creating DbConnection.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20006]
+      Created DbConnection. (19ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (9ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (25ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[UsuarioId], [u].[Activo], [u].[Dni], [u].[Email], [u].[FechaCreacion], [u].[NombreCompleto], [u].[PasswordHash], [u].[Rol], [u].[Telefono]
+      FROM [Usuarios] AS [u]
+      WHERE [u].[Email] = @__email_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (228ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[UsuarioId], [u].[Activo], [u].[Dni], [u].[Email], [u].[FechaCreacion], [u].[NombreCompleto], [u].[PasswordHash], [u].[Rol], [u].[Telefono]
+      FROM [Usuarios] AS [u]
+      WHERE [u].[Email] = @__email_0
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'EventifyDbContext' started tracking 'Usuario' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433' is being disposed after spending 84ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433' (8ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (2ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (4ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[UsuarioId], [u].[Activo], [u].[Dni], [u].[Email], [u].[FechaCreacion], [u].[NombreCompleto], [u].[PasswordHash], [u].[Rol], [u].[Telefono]
+      FROM [Usuarios] AS [u]
+      WHERE [u].[Email] = @__email_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (169ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[UsuarioId], [u].[Activo], [u].[Dni], [u].[Email], [u].[FechaCreacion], [u].[NombreCompleto], [u].[PasswordHash], [u].[Rol], [u].[Telefono]
+      FROM [Usuarios] AS [u]
+      WHERE [u].[Email] = @__email_0
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433' is being disposed after spending 3ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'Eventify-Local' on server 'tcp:eventify-sql-server.database.windows.net,1433'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connectio
